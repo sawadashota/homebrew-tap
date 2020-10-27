@@ -7,16 +7,14 @@ class UnifiDoorbellChime < Formula
 
   if OS.mac?
     url "https://github.com/sawadashota/unifi-doorbell-chime/releases/download/0.0.1/unifi-doorbell-chime_0.0.1_Darwin_x86_64.tar.gz"
-    sha256 "880a9de89caf9dd06c6fc13dcf53128d18d90901f412b950a1b3e3c87aba2fc6"
+    sha256 "54c1f441f0ebba4d009e19fd8f93df037ef8a00fcb9fb8890c71fdee275cafda"
   elsif OS.linux?
   end
 
   def install
     bin.install "unifi-doorbell-chime"
-    Dir.mkdir(Dir.home + '/.unifi-doorbell-chime')
-    
-    require 'fileutils'
-    FileUtils.cp('config.sample.yaml', Dir.home + '/.unifi-doorbell-chime/config.yaml')
-    FileUtils.cp_r('assets', Dir.home + '/.unifi-doorbell-chime/assets')
+    puts "please exec init command"
+    puts
+    puts "$ unifi-proto-chime init"
   end
 end
