@@ -2,19 +2,21 @@
 class UnifiDoorbellChime < Formula
   desc "Notify to Mac when Doorbell rung."
   homepage "https://github.com/sawadashota/unifi-doorbell-chime"
-  version "0.0.1-beta"
+  version "0.0.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/sawadashota/unifi-doorbell-chime/releases/download/0.0.1-beta/unifi-doorbell-chime_0.0.1-beta_Darwin_x86_64.tar.gz"
-    sha256 "fe80ef052c786338753ee0c107b53c2fc6c97221351fd1a449b84523806f44f8"
+    url "https://github.com/sawadashota/unifi-doorbell-chime/releases/download/0.0.1/unifi-doorbell-chime_0.0.1_Darwin_x86_64.tar.gz"
+    sha256 "880a9de89caf9dd06c6fc13dcf53128d18d90901f412b950a1b3e3c87aba2fc6"
   elsif OS.linux?
   end
 
   def install
     bin.install "unifi-doorbell-chime"
-    mkdir $HOME/.unifi-doorbell-chime
-    cp config.sample.yaml $HOME/.unifi-doorbell-chime/config.yaml
-    cp assets $HOME/.unifi-doorbell-chime/assets
+    Dir.mkdir(Dir.home + '/.unifi-doorbell-chime')
+    
+    require 'fileutils'
+    FileUtils.cp('config.sample.yaml', Dir.home + '/.unifi-doorbell-chime/config.yaml')
+    FileUtils.cp_r('assets', Dir.home + '/.unifi-doorbell-chime/assets')
   end
 end
