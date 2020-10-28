@@ -2,12 +2,12 @@
 class UnifiDoorbellChime < Formula
   desc "Notify to Mac when Doorbell rung."
   homepage "https://github.com/sawadashota/unifi-doorbell-chime"
-  version "0.0.1"
+  version "0.0.2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/sawadashota/unifi-doorbell-chime/releases/download/0.0.1/unifi-doorbell-chime_0.0.1_Darwin_x86_64.tar.gz"
-    sha256 "b37e07791093682ab9ce2858dc4f7e5e0b3bde7db7f97dc4d540f33e7dd24961"
+    url "https://github.com/sawadashota/unifi-doorbell-chime/releases/download/0.0.2/unifi-doorbell-chime_v0.0.2_Darwin_x86_64.tar.gz"
+    sha256 "a5cad38b0919752035d8da00042c1e443fe31de715d3e3b5b816ca083e19a0f7"
   elsif OS.linux?
   end
 
@@ -20,5 +20,38 @@ class UnifiDoorbellChime < Formula
     puts "$ unifi-doorbell-chime init"
     puts
     puts
+  end
+
+  plist_options :startup => false
+
+  def plist; <<~EOS
+    <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>KeepAlive</key>
+    <dict>
+      <key>SuccessfulExit</key>
+      <false/>
+    </dict>
+    <key>Label</key>
+    <string>#{plist_name}</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>#{opt_bin}/unifi-doorbell-chime</string>
+      <string>start</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>WorkingDirectory</key>
+    <string>#{var}</string>
+    <key>StandardErrorPath</key>
+    <string>#{var}/log/unifi-doorbell-chime.log</string>
+    <key>StandardOutPath</key>
+    <string>#{var}/log/unifi-doorbell-chime.log</string>
+  </dict>
+</plist>
+
+  EOS
   end
 end
