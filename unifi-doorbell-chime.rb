@@ -7,7 +7,7 @@ class UnifiDoorbellChime < Formula
 
   if OS.mac?
     url "https://github.com/sawadashota/unifi-doorbell-chime/releases/download/0.0.3/unifi-doorbell-chime_v0.0.3_Darwin_x86_64.tar.gz"
-    sha256 "b78310b10a2aa6ee67ea40c63bb6430d88eeaeb5106ccfbf7c7da30f8ef38afe"
+    sha256 "603467f9fd563ae9a50e529c8fb393b5b6c4e1fd5d48e2be830e429f471ca549"
   elsif OS.linux?
   end
 
