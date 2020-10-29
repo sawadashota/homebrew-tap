@@ -2,24 +2,17 @@
 class UnifiDoorbellChime < Formula
   desc "Notify to Mac when Doorbell rung."
   homepage "https://github.com/sawadashota/unifi-doorbell-chime"
-  version "0.0.2"
+  version "0.0.3"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/sawadashota/unifi-doorbell-chime/releases/download/0.0.2/unifi-doorbell-chime_v0.0.2_Darwin_x86_64.tar.gz"
-    sha256 "a5cad38b0919752035d8da00042c1e443fe31de715d3e3b5b816ca083e19a0f7"
+    url "https://github.com/sawadashota/unifi-doorbell-chime/releases/download/0.0.3/unifi-doorbell-chime_v0.0.3_Darwin_x86_64.tar.gz"
+    sha256 "b78310b10a2aa6ee67ea40c63bb6430d88eeaeb5106ccfbf7c7da30f8ef38afe"
   elsif OS.linux?
   end
 
   def install
     bin.install "unifi-doorbell-chime"
-    puts
-    puts "please exec init command"
-    puts
-    puts
-    puts "$ unifi-doorbell-chime init"
-    puts
-    puts
   end
 
   plist_options :startup => false
@@ -53,5 +46,9 @@ class UnifiDoorbellChime < Formula
 </plist>
 
   EOS
+  end
+
+  test do
+    system "#{bin}/unifi-doorbell-chime --version"
   end
 end
