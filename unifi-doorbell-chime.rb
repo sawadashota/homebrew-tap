@@ -7,17 +7,17 @@ class UnifiDoorbellChime < Formula
 
   if OS.mac?
     url "https://github.com/sawadashota/unifi-doorbell-chime/releases/download/0.0.5/unifi-doorbell-chime_v0.0.5_darwin_amd64.tar.gz"
-    sha256 "c444c19cdb48709905eeb899d05c9c6ebd496e602278c3f7523cfa450455648d"
+    sha256 "fcdb7f4b148eba4a2b9d06620edad787912fbd482f8f4d3eff078dd2ec7b54b6"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/sawadashota/unifi-doorbell-chime/releases/download/0.0.5/unifi-doorbell-chime_v0.0.5_linux_amd64.tar.gz"
-      sha256 "a5ed3103f322a0a52fdab570658a26f089f98521fba0af6ac8a846a6025c2069"
+      sha256 "3980318e430002eafa5529d18a2ef318a1ffa1b16ca6ee59964ee9cb4d609d66"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
       else
         url "https://github.com/sawadashota/unifi-doorbell-chime/releases/download/0.0.5/unifi-doorbell-chime_v0.0.5_linux_arm.tar.gz"
-        sha256 "04ed0969dcf8ee2a30fd8c6f23c65609b7b132fdec9bc8479b5a992002aede5b"
+        sha256 "2935acb231c25d5c423c48a4fa99ebd43c4f8cd57ea9cd69d225528c982e01a2"
       end
     end
   end
