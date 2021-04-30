@@ -5,20 +5,20 @@
 class UnifiDoorbellChime < Formula
   desc "Notify to Mac when Doorbell rung."
   homepage "https://github.com/sawadashota/unifi-doorbell-chime"
-  version "0.1.6"
+  version "0.1.13"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/sawadashota/unifi-doorbell-chime/releases/download/v0.1.6/unifi-doorbell-chime_v0.1.6_darwin_amd64.tar.gz"
-    sha256 "13f7701c6d91349c81f8a230eb09dfa2ea11d6d676ab240d2b8b1845bbec92d5"
+    url "https://github.com/sawadashota/unifi-doorbell-chime/releases/download/v0.1.13/unifi-doorbell-chime_v0.1.13_darwin_amd64.tar.gz"
+    sha256 "bad30f920c9c02fa2e2c5e05ff8b7f9f5e2a9923f9d64af9d3359bcee05b41a0"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/sawadashota/unifi-doorbell-chime/releases/download/v0.1.6/unifi-doorbell-chime_v0.1.6_linux_amd64.tar.gz"
-    sha256 "f88f1426dda23c58ed61ce053f293c511b1fa92190eb32b846aa8ee8dd978fe5"
+    url "https://github.com/sawadashota/unifi-doorbell-chime/releases/download/v0.1.13/unifi-doorbell-chime_v0.1.13_linux_amd64.tar.gz"
+    sha256 "fd59a47ffdd4789871da14703e813524863b4e129e8d9969c985b84fe0ba118c"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/sawadashota/unifi-doorbell-chime/releases/download/v0.1.6/unifi-doorbell-chime_v0.1.6_linux_arm.tar.gz"
-    sha256 "a9f32e3d93dd023e6ff3b2eab03e4a9db0c29a550128b862a878ae1ab3ffda51"
+    url "https://github.com/sawadashota/unifi-doorbell-chime/releases/download/v0.1.13/unifi-doorbell-chime_v0.1.13_linux_arm.tar.gz"
+    sha256 "d2b42ce730fcc40f561bdcfce479fd3da3243e2d966ede6384b21e32568797b7"
   end
 
   def install
