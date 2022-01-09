@@ -6,7 +6,6 @@ class UnifiDoorbellNotifier < Formula
   desc "Notify to your PC when Doorbell rung."
   homepage "https://github.com/sawadashota/unifi-doorbell-notifier"
   version "0.1.1"
-  bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/sawadashota/unifi-doorbell-notifier/releases/download/v0.1.1/unifi-doorbell-notifier_v0.1.1_x86_64-apple-darwin.zip"
