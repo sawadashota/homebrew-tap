@@ -3,18 +3,8 @@ class UnifiDoorbellNotifier < Formula
   homepage "https://github.com/sawadashota/unifi-doorbell-notifier"
   version "0.1.2"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/sawadashota/unifi-doorbell-notifier/releases/download/v0.1.2/unifi-doorbell-notifier_v0.1.2_x86_64-apple-darwin.zip"
-    sha256 "f1c4f3df5c44b366723c69dbf1f342e72b132c72988a90d3b767f046e920ef93"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/sawadashota/unifi-doorbell-notifier/releases/download/v0.1.2/unifi-doorbell-notifier_v0.1.2_x86_64-unknown-linux-musl.tar.gz"
-    sha256 "2a2bc6077583d428fb844112a8cf6d59e63b8128e13d6f452bad0deff0bad36c"
-  end
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/sawadashota/unifi-doorbell-notifier/releases/download/v0.1.2/unifi-doorbell-notifier_v0.1.2_x86_64-unknown-linux-musl.tar.gz"
-    sha256 "2a2bc6077583d428fb844112a8cf6d59e63b8128e13d6f452bad0deff0bad36c"
-  end
+  url "https://github.com/sawadashota/unifi-doorbell-notifier/releases/download/v0.1.2/unifi-doorbell-notifier_v0.1.2_x86_64-apple-darwin.zip"
+  sha256 "f1c4f3df5c44b366723c69dbf1f342e72b132c72988a90d3b767f046e920ef93"
 
   def install
     bin.install "unifi-doorbell-notifier"
