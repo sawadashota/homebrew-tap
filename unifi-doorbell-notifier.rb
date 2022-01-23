@@ -1,10 +1,10 @@
 class UnifiDoorbellNotifier < Formula
   desc "Notify to your PC when Doorbell rung."
   homepage "https://github.com/sawadashota/unifi-doorbell-notifier"
-  version "0.1.6"
+  version "0.1.7"
 
-  url "https://github.com/sawadashota/unifi-doorbell-notifier/releases/download/v0.1.6/unifi-doorbell-notifier_v0.1.6_x86_64-apple-darwin.zip"
-  sha256 "c9e63c54934db3c1f575ec0178870fef263da9e77e861bd56de4d6588795c7b7"
+  url "https://github.com/sawadashota/unifi-doorbell-notifier/releases/download/v0.1.7/unifi-doorbell-notifier_v0.1.7_x86_64-apple-darwin.zip"
+  sha256 "9b84dae360488fcb6e8e8e0ad69fdd0fde0702776208c77adfd674edcec4fa76"
 
   def install
     bin.install "unifi-doorbell-notifier"
